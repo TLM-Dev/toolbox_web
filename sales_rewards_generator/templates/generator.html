@@ -1,0 +1,35 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Django Tailwind</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+
+	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+        <div class="max-w-lg mx-auto mt-10">
+            <h1 class="text-2xl font-bold mb-5">Upload Excel and Convert to PDF</h1>
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="id_file">
+                  Excel or CSV File
+                </label>
+                <input class="form-input mt-1 block w-full" id="id_file" type="file" name="file" required>
+              </div>
+              <div class="mb-4">
+              </div>
+              <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Submit
+              </button>
+            </div>
+              <div class="mt-10">
+              </div>
+            </form>
+        </div>
+    </body>
+</html>

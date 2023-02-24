@@ -1,0 +1,50 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Django Tailwind</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+
+	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+        <div class="max-w-lg mx-auto mt-10">
+            <h1 class="text-2xl font-bold mb-5">Upload and Combine Files</h1>
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="zip_file">
+                  ZIP file
+                </label>
+                <input class="form-input mt-1 block w-full" id="zip_file" type="file" name="zip_file" required>
+              </div>
+              <div class="mb-4">
+                <label class="block text-gray-700 font-bold mb-2" for="option">
+                  Concatenation option
+                </label>
+                <div class="relative">
+                  <select class="form-select block appearance-none w-full bg-white border border-gray-400 hover:border-gray-500 px-4 py-2 pr-8 rounded shadow leading-tight focus:outline-none focus:shadow-outline" id="option" name="option" required>
+                    <option value="" disabled selected>Select an option</option>
+                    <option value="sheet">To Sheet</option>
+                    <option value="workbook">To Workbook</option>
+                  </select>
+                  <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-700">
+                    <!-- <svg class="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.29289 12.2929C9.68342 12.6834 10.3166 12.6834 10.7071 12.2929L14.7071 8.29289C15.0976 7.90237 15.0976 7.2692 14.7071 6.87868C14.3166 6.48815 13.6834 6.48815 13.2929 6.87868L10 10.1716L6.70711 6.87868C6.31658 6.48815 5.68342 6.48815 5.29289 6.87868C4.90237 7.2692 4.90237 7.90237 5.29289 8.29289L9.29289 12.2929ZM9.29289 5.70711C9.68342 5.31658 10.3166 5.31658 10.7071 5.70711L14.7071 9.70711C15.0976 10.0976 15.0976 10.7308 14.7071 11.1213C14.3166 11.5118 13.6834 11.5118 13.2929 11.1213L10 7.82843L6.70711 11.1213C6.31658 11.5118 5.68342 11.5118 5.29289 11.1213C4.90237 10.7308 4.90237 10.0976 5.29289 9.70711L9."/> -->
+                    </div>
+                </div>
+              </div>
+              <div class="mt-10">
+                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                  Submit
+                </button>
+              </div>
+            </form>
+        </div>
+    </body>
+</html>
+
+
+    

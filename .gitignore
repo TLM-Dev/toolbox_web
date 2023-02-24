@@ -1,0 +1,11 @@
+*.log
+*.zip
+*.pdf
+*.xls*
+*.csv
+*.db
+*.sqlite3
+__pycache__/
+RANDOM/
+.*
+!.gitignore

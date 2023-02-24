@@ -1,0 +1,57 @@
+{% load static tailwind_tags %}
+{% url 'rewards' as rewards %}
+{% url 'billing' as billing %}
+{% url 'mail' as mail %}
+{% url 'split' as split %}
+{% url 'merge' as merge %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Django Tailwind</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+
+	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+        <main class="flex justify-center items-center bg-blue-500 h-screen">
+            <div class="bg-white w-48 h-48 m-5 text-center">
+                <a href="{{ rewards }}" >        
+                    <ol class="w-full h-full">
+                        Sales Rewards Generator
+                    </ol>
+                </a>
+            </div>
+            <div class="bg-white w-48 h-48 m-5 text-center">
+                <a href="{{ merge }}" class="">        
+                    <ol class="w-full h-full">
+                        Excel Merge
+                    </ol>
+                </a>
+            </div>
+            <div class="bg-white w-48 h-48 m-5 text-center">
+                <a href="{{ split }}" class="">        
+                    <ol class="w-full h-full">
+                        Excel Split
+                    </ol>
+                </a>
+            </div>
+            <div class="bg-white w-48 h-48 m-5 text-center">
+                <a href="{{ mail }}" class="">        
+                    <ol class="w-full h-full">
+                        Comms & Rewards Emailer
+                    </ol>
+                </a>
+            </div>
+            <div class="bg-white w-48 h-48 m-5 text-center">
+                <a href="{{ billing }}" class="">        
+                    <ol class="w-full h-full">
+                        Wholesaler Invoices
+                    </ol>
+                </a>
+            </div>
+        </main>
+    </body>
+</html>

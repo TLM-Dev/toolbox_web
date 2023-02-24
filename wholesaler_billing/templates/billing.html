@@ -1,0 +1,32 @@
+{% load static tailwind_tags %}
+
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+    <title>Django Tailwind</title>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<meta http-equiv="X-UA-Compatible" content="ie=edge">
+		{% tailwind_css %}
+	</head>
+
+	<body class="bg-gray-50 font-serif leading-normal tracking-normal">
+        <div class="max-w-lg mx-auto mt-10">
+            <h1 class="text-2xl font-bold mb-5">Wholesaler Billing</h1>
+            <form method="post" enctype="multipart/form-data">
+              {% csrf_token %}
+              {% for field in form.visible_fields %}
+                <div class="mb-4">
+                  <label class="block text-gray-700 font-bold mb-2" for="{{ field.id_for_label }}">
+                    {{ field.label }}
+                  </label>
+                  {{ field }}
+                </div>
+              {% endfor %}
+              <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">
+                Submit
+              </button>
+            </form>
+        </div>
+    </body>
+</html>
