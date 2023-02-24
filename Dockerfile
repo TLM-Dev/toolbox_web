@@ -11,5 +11,3 @@ COPY req.txt req.txt
 RUN pip install -r req.txt
 
 COPY . .
-
-RUN chmod +x entrypoint.sh
